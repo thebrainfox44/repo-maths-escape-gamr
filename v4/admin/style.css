@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.tile {
+    border-radius: 7px;
+    width: calc(20% - 17px);
+    margin-bottom: 23px;
+    text-align: center;
+    border: 3px solid #e7e7e7;
+    transition: 0.2s all cubic-bezier(0.4, 0.0, 0.2, 1);
+    position: relative;
+    padding: 35px 16px 25px;
+    margin-right: 17px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: white;
+}
+
+.tile:hover {
+    background-color: #e7e7e7;
+}
+
+i {
+    color: #00A8FF;
+    height: 55px;
+    margin-bottom: 20px;
+    font-size: 55px;
+    display: block;
+    line-height: 54px;
+    cursor: pointer;
+}
+
+dialog {
+    width: 65%;
+    height: 80%;
+    background-color: white;
+    border-radius: 7px;
+    border: 1px solid #eeeeee;
+}
+
+dialog::backdrop {
+    background-color: rgba(100, 100, 100, 0.9);
+}
+
+dialog div{
+    width: 98%;
+    height: 98%;
+    margin: -25px;
+    padding: 25px;
+}
+
+@media (max-width:600px) {
+    .tile {
+        border-radius: 7px;
+        width: 250px;
+        margin-bottom: 23px;
+        text-align: center;
+        border: 3px solid #e7e7e7;
+        transition: 0.2s all cubic-bezier(0.4, 0.0, 0.2, 1);
+        position: relative;
+        padding: 35px 16px 25px;
+        margin-right: 17px;
+        cursor: pointer;
+        display: block;
+        background-color: white;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    dialog {
+        width: 90%;
+        height: 80%;
+        background-color: white;
+        border-radius: 7px;
+        border: 1px solid #eeeeee;
+        text-align: center;
+    }
+
+    dialog select {
+        width: 75%;
+        height: 30px;
+    }
+
+    dialog button {
+        position: absolute;
+        top: 150px;
+        left: 50px;
+    }
+}
+
+dialog select {
+    width: 250px;
+    height: 30px;
+}
+
+dialog button {
+    height: 30px;
+}

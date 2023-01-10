@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>escape game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <button class="back" onclick="previous()" id="back">
+        <i class="mdi mdi-arrow-left backI"></i>
+    </button>
+
+    <div class="stage">
+        <div class="scene" id="scene-1">
+            <!-- MAIN FOLDER -->
+            <h1 class="name">fichiers</h1>
+
+            <div class="tile folder" ondblclick="switchScene(2)">
+                <i class="mdi mdi-folder"></i>
+                <h3>recherches</h3>
+                <p>7 éléments</p>
+            </div><!-- .tile.folder -->
+
+            <div class="tile folder" ondblclick="switchScene(3)">
+                <i class="mdi mdi-folder-lock" id="lockfolder1"></i>
+                <h3>sécurité <button class="alert" id="lockalert1"><span>!</span></button></h3>
+                <p>3 éléments</p>
+            </div><!-- .tile.folder -->
+
+            <div class="tile form" ondblclick="openfile('docx', 'credits')">
+                <i class="mdi mdi-file-document"></i>
+                <h3>credits.docx</h3>
+                <p>300 ko</p>
+            </div><!-- .tile.form -->
+
+            <div class="tile form">
+                <i class="mdi mdi-movie"></i>
+                <h3>video name.mp4</h3>
+                <p>30 mo</p>
+            </div><!-- .tile.form -->
+
+            <div class="tile form" >
+                <i class="mdi mdi-microphone"></i>
+                <h3>audio_835.mp3</h3>
+                <p>2 mo</p>
+            </div>
+        </div>
+
+        <!-- SUBFOLDER "RECHERCHES" -->
+        <div class="scene" id="scene-2">
+            <h1 class="name">recherches</h1>
+            <div class="tile form" ondblclick="openfile('pdf', 'instructions')">
+                <i class="mdi mdi-file-document"></i>
+                <h3>instructions.pdf</h3>
+                <p>120ko</p>
+            </div><!-- .tile.form -->
+
+            <div class="tile form" ondblclick="openfile('png', 'materiel')">
+                <i class="mdi mdi-file-image"></i>
+                <h3>materiel.png</h3>
+                <p>1,5mo</p>
+            </div><!-- .tile.form -->
+        </div>
+        <div class="scene" id="scene-3">
+            <h1 class="name">sécurité</h1>
+
+            <div class="tile form" ondblclick="openfile('text', '2')">
+                <i class="mdi mdi-file-document"></i>
+                <h3>file name.txt</h3>
+                <p>300ko</p>
+            </div><!-- .tile.form -->
+        </div>
+        <div class="scene" id="scene-4">
+
+        </div>
+        <div class="scene" id="scene-5">
+
+        </div>
+    </div><!-- .stage -->
+
+    <dialog class="loginbox" id="loginbox">
+        <div>
+            <h1 class="loginTitle" id="loginTitle">dossier protégé par un mot de passe</h1>
+            <i class="mdi mdi-close-circle" onclick="document.getElementById('loginbox').close()"></i>
+            <div class="loginContent" id="loginContent">
+                <input type='password' placeholder='mot de passe' class='input-line full-width' id="passwordInput"
+                    autocomplete="off"></input>
+                <button onclick="submit()" class="submit"><i class="mdi mdi-arrow-right-circle"></i></button>
+                <br>
+                <br>
+                <input type="checkbox" id="pswShow" name="pswShow" class="pswShow">
+                <label for="pswShow">montrer le mot de passe</label>
+                <p class="wrong" id="wrong">mot de passe incorrect</p>
+            </div>
+        </div>
+    </dialog>
+
+
+    <audio src="" id="audio" autoplay></audio>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

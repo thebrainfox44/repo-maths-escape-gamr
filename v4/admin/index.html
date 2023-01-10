@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./admin/style.css">
+</head>
+
+<body>
+    <h1>admin panel</h1>
+    <button onclick="document.getElementById('openfolder').showModal()" class="tile">
+        <h2>ouvrir une fenetre</h2>
+        <i class="mdi mdi-folder"></i>
+    </button>
+    <button onclick="document.getElementById('unlockfolder').showModal()" class="tile">
+        <h2>déverouiller un dossier</h2>
+        <i class="mdi mdi-folder-lock-open"></i>
+    </button>
+    <button onclick="document.getElementById('lockfolder').showModal()" class="tile">
+        <h2>verouiller un dossier</h2>
+        <i class="mdi mdi-folder-lock"></i>
+    </button>
+    <button onclick="document.getElementById('closepopup').showModal()" class="tile">
+        <h2>fermer un popup</h2>
+        <i class="mdi mdi-alert-minus"></i>
+    </button>
+    <button onclick="document.getElementById('sendvocalclue').showModal()" class="tile">
+        <h2>envoyer un indice vocal</h2>
+        <i class="mdi mdi-microphone-question"></i>
+    </button>
+    <button onclick="document.getElementById('sendclue').showModal()" class="tile">
+        <h2>envoyer un indice</h2>
+        <i class="mdi mdi-message-question"></i>
+    </button>
+
+    <dialog class="openfolder" id="openfolder">
+        <div>
+            <h2>choisir une fenetre à afficher</h2>
+            <select id="selectfolder">
+                <option value="folder1">retour à la racine</option>
+                <optgroup id="grp1" label="./">
+                    <option value="folder2">recherches</option>
+                    <option value="folder3">sécurité</option>
+                    <option value="file1">filename.txt</option>
+                    <option value="file4">video name.mp4</option>
+                <optgroup id="grp2" label="./recherches/">
+                    <option value="file2">instructions.txt</option>
+                    <option value="file4">materiel.png</option>
+                </optgroup>
+                <optgroup id="grp3" label="./sécurité/">
+                    <option value="file3">filename.txt</option>
+                </optgroup>
+                </optgroup>
+            </select>
+
+            <button onclick="remoteopen()">ouvrir</button>
+        </div>
+    </dialog>
+
+    <dialog class="unlockfolder" id="unlockfolder">
+        <div>
+            <h2>choisir un dossier à déverouiller</h2>
+            <select id="unlockfolderselect">
+                <optgroup id="grp-1" label="./">
+                    <option value="folder3">sécurité</option>
+                </optgroup>
+            </select>
+
+            <button onclick="remoteunlock()">déverouiller</button>
+        </div>
+    </dialog>
+
+    <dialog class="sendvocalclue" id="sendvocalclue">
+        <div>
+            <h2>choisir un indice à envoyer</h2>
+            <select id="sendvocalclueselect">
+                <optgroup id="grp-1" label="./">
+                    <option value="clue1">test 1</option>
+                    <option value="clue2">test 2</option>
+                </optgroup>
+            </select>
+
+            <button onclick="sendvocalclue()">envoyer l'indice vocal</button>
+        </div>
+    </dialog>
+
+    <dialog class="sendclue" id="sendclue">
+        <div>
+            <h2>écrire un indice à envoyer</h2>
+            <textarea id="sendclueselect" cols="30" rows="10" placeholder="écrivez le message ici"></textarea>
+
+            <button onclick="sendclue()">envoyer l'indice</button>
+        </div>
+    </dialog>
+
+    <dialog class="lockfolder" id="lockfolder">
+        <div>
+            <h2>choisir un dossier à verouiller</h2>
+            <select id="lockfolderselect">
+                <optgroup id="grp-1" label="./">
+                    <option value="folder3">sécurité</option>
+                </optgroup>
+            </select>
+
+            <button onclick="remotelock()">verouiller</button>
+        </div>
+    </dialog>
+
+    <dialog class="closepopup" id="closepopup">
+        <div>
+            <h2>choisir un popup à fermer<br><br></h2>
+            <select id="closepopupselect">
+                <option value="popup1">file</option>
+                <option value="popup2">unlock folder</option>
+            </select>
+
+            <button onclick="remoteclosepopup()" >fermer</button>
+        </div>
+    </dialog>
+
+    <script src="./admin/script.js"></script>
+</body>
+
+</html>
